@@ -1,1 +1,1 @@
-# unit-4-game
+Welcome to my Crystal Collector game. This is a very simple game. The game will generate a random number. There are 4 crystals on the page. Each crystal will be assigned a random number at the start of the game. Pressing a crystal will add to your score. The goal of the game is to get exactly the number the game first generates for you. Going over that number will reset the game, re-randomizing the number goal and the crystal number values.
