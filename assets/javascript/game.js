@@ -4,23 +4,57 @@ var randomJewelNumber1;
 var randomJewelNumber2;
 var randomJewelNumber3;
 var randomJewelNumber4;
-// this function gets a random number between 19 and 120.
-function randomTargetNumber(){
+var score = 0;
+var wins = 0;
+var losses = 0;
+
+function randomTargetNumberGen(){
     return Math.floor(Math.random() * 102) + 19;
 }
 function randomJewelNumber(){
     return Math.floor(Math.random() * 12) + 1;
 }
-randomJewelNumber1 = randomJewelNumber();
-randomJewelNumber2 = randomJewelNumber();
-randomJewelNumber3 = randomJewelNumber();
-randomJewelNumber4 = randomJewelNumber();
+function start(){
+    randomJewelNumber1 = randomJewelNumber();
+    randomJewelNumber2 = randomJewelNumber();
+    randomJewelNumber3 = randomJewelNumber();
+    randomJewelNumber4 = randomJewelNumber();
+    randomTargetNumber = randomTargetNumberGen();
+    $("#targetNumber").text(randomTargetNumber);
+}
+start();
 console.log(randomJewelNumber1);
 console.log(randomJewelNumber2);
 console.log(randomJewelNumber3);
-console.log(randomJewelNumber4);
-randomTargetNumber = randomTargetNumber(); // this runs the function random() and returns the output of the function as the variable randomTargetNumber
-console.log(randomTargetNumber); //logs the randomTargetNumber
-$("#targetNumber").html(randomTargetNumber);
+console.log(randomJewelNumber4); 
+console.log(randomTargetNumber); 
+$("#jewel1").on("click", function(){
+    score += randomJewelNumber1;
+    $("#score").text(score);
+});
+$("#jewel2").on("click", function(){
+    score += randomJewelNumber2;
+    $("#score").text(score);
+});
+$("#jewel3").on("click", function(){
+    score += randomJewelNumber3;
+    $("#score").text(score);
+});
+$("#jewel4").on("click", function(){
+    score += randomJewelNumber4;
+    $("#score").text(score);
+});
+if(score === randomTargetNumber){
+    wins++;
+    $("#wins").text(wins);
+    $("#score").text("0");
+    start();
+} else if(score > randomTargetNumber){
+    losses++;
+    $("#losses").text(losses);
+    $("#score").text("0");
+    start();
+}
+
 
 }); 
