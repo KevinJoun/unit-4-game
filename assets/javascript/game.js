@@ -20,8 +20,23 @@ function start(){
     randomJewelNumber3 = randomJewelNumber();
     randomJewelNumber4 = randomJewelNumber();
     randomTargetNumber = randomTargetNumberGen();
+    score = 0;
     $("#targetNumber").text(randomTargetNumber);
 }
+function ifElse(){
+    if(score === randomTargetNumber){
+    wins++;
+    $("#insert").html("<p>You Win!</p>")
+    $("#wins").text(wins);
+    $("#score").text("0");
+    start();
+} else if(score > randomTargetNumber){
+    losses++;
+    $("#insert").html("<p>You Lose!</p>")
+    $("#losses").text(losses);
+    $("#score").text("0");
+    start();
+}}
 start();
 console.log(randomJewelNumber1);
 console.log(randomJewelNumber2);
@@ -31,30 +46,21 @@ console.log(randomTargetNumber);
 $("#jewel1").on("click", function(){
     score += randomJewelNumber1;
     $("#score").text(score);
+    ifElse();
 });
 $("#jewel2").on("click", function(){
     score += randomJewelNumber2;
     $("#score").text(score);
+    ifElse();
 });
 $("#jewel3").on("click", function(){
     score += randomJewelNumber3;
     $("#score").text(score);
+    ifElse();
 });
 $("#jewel4").on("click", function(){
     score += randomJewelNumber4;
     $("#score").text(score);
+    ifElse();
 });
-if(score === randomTargetNumber){
-    wins++;
-    $("#wins").text(wins);
-    $("#score").text("0");
-    start();
-} else if(score > randomTargetNumber){
-    losses++;
-    $("#losses").text(losses);
-    $("#score").text("0");
-    start();
-}
-
-
 }); 
