@@ -1,0 +1,63 @@
+h1 {
+    margin: 5px 0px 0px 5px;
+    color: white;
+    background-color: orange;
+    padding: 20px 5px 20px 5px;
+    width: fit-content ;
+}
+
+#instructions {
+    line-height: 120%;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 20px 5px 20px 5px;
+    margin: 20px 0px 20px 5px;
+    background-color: bisque;
+    color: black;
+    width: 400px;
+}
+
+
+#container {
+    margin: 0px 5px 20px 5px;
+    width: fit-content;
+    display: flex;
+}
+
+#targetNumber {
+    font-weight: bold;
+    font-size: 32px;
+    color: white;
+    background-color: green;
+    margin-right: 10px;
+    padding: 5px 100px 80px 5px;
+}
+
+#scoreBox {
+    background-color: blue;
+    color: white;
+    line-height: 30px;
+    padding-top: 10px;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+#scoreLabel{
+    font-size: 16px;
+    font-weight: bold;
+    background-color: yellow;
+    width: fit-content;
+    margin-top: 10px;
+    margin-left: 5px;
+    padding: 10px 150px 10px 5px;
+}
+
+#score {
+    margin-left: 5px;
+    margin-top: 10px;
+    background-color: yellow;
+    width: fit-content;
+    font-weight: bold;
+    font-size: 32px;
+    padding: 10px 150px 10px 5px;
+}
